@@ -71,11 +71,13 @@
     yMin = Math.floor(Math.min(...earningsValues) * 10) / 10 - 0.5;
     yMax = Math.ceil(Math.max(...earningsValues) * 10) / 10 + 0.5;
     
-    // Generate tick values for X and Y axes
-    xTicks = Array.from(
-      { length: Math.ceil((xMax - xMin) / 2) + 1 }, 
-      (_, i) => xMin + i * 2
-    );
+    // Generate tick values for X and Y axes - ensure even numbers only for X axis
+    xTicks = [];
+    // Start from the first even number after or at xMin
+    let start = xMin % 2 === 0 ? xMin : xMin + 1;
+    for (let i = start; i <= xMax; i += 2) {
+      xTicks.push(i);
+    }
     
     yTicks = Array.from(
       { length: Math.ceil((yMax - yMin) / 0.5) + 1 }, 
