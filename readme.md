@@ -8,3 +8,11 @@ Svelte instruction is from [here](https://svelte.dev/docs/llms).
 Simulated with Python.
 Adjust as you like.
 
+# Visualization Results
+
+## Original Visualization
+![Original CEF Visualization](cef_original.png)
+
+## New Visualization
+![New CEF Visualization with average points](cef_new.png)
+
